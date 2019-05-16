@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hiking Guide</title>
+</head>
+<body>
+    <section>
+        <h1>Find A Trail to Hike in Your Area</h1>
+        <form id="js-form">
+            <label for="search-text">Find Trails In: </label>
+            <input type="text" name="search-state" id="js-search-state" placeholder="city, state" required>
+            <input type="submit" value="submit">
+        </form>
+    </section>
+    <section class="js-error-message"></section>
+    <section id="results" class="hidden">
+        <h2>Results</h2>
+        <ul id="results-list">
+
+        </ul>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
