@@ -43,8 +43,8 @@ function getCoordinates(query) {
     getTrails();
 }
 
-let latitude = coordinatesData.results[0].geometry.location.lat();
-let longitude = coordinatesData.results[0].geometry.location.lng();
+// let latitude = coordinatesData.results[0].geometry.location.lat();
+// let longitude = coordinatesData.results[0].geometry.location.lng();
 
 function formatHikingQuery(trailParams) {
     const hikingQueryItems = Object.keys(trailParams)
@@ -75,6 +75,8 @@ function getTrails(latitude, longitude) {
 }
 
 function displayResults(hikingData) {
+    let latitude = coordinatesData.results[0].geometry.location.lat();
+    let longitude = coordinatesData.results[0].geometry.location.lng();
     console.log(hikingData);
     $('#results-list').empty();
 }
