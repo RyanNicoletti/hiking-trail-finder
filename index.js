@@ -40,7 +40,13 @@ function getCoordinates(query) {
     .catch(err => {
         $('.js-error-message').text(`Error: ${err.message}`)
     })
-    getTrails();
+}
+
+function displayResults(coordinatesData) {
+    console.log(coordinatesData);
+    let latitude = coordinatesData.results[0].geometry.location.lat;
+    let longitude = coordinatesData.results[0].geometry.location.lng;
+    getTrails(latitude, longitude);
 }
 
 function formatHikingQuery(trailParams) {
@@ -65,17 +71,23 @@ function getTrails(latitude, longitude) {
         }
         throw new Error(response.statusText)
     })
-    .then(hikingData => displayResults(hikingData))
+    .then(hikingData => renderHikingData(hikingData))
     .catch(err => {
         $('.js-error-message').text(`error: ${err.message}`);
     })
 }
 
-function displayResults(coordinatesData) {
-    let latitude = coordinatesData.results[0].geometry.location.lat();
-    let longitude = coordinatesData.results[0].geometry.location.lng();
-    console.log(coordinatesData);
+function renderHikingData(hikingData) {
+    console.log(hikingData);
     $('#results-list').empty();
+    for (let i = 0; i<hikingData.trails.length; i++) {
+        $('#results-list').append(`<li><h2><a href = "${hikingData.trails[i].url}">${hikingData.trails[i].name}</a></h2>
+        <p>${hikingData.trails[i].summary}</p>
+        <p>Distance: ${hikingData.trails[i].length}miles.</p>
+        <p><img src="${hikingData.trails[i].imgSmallMed}" alt="picture of hiking trail"></p>
+        </li>`)
+    }
+    $('#results').removeClass('hidden');
 }
 
 $(watchForm);
