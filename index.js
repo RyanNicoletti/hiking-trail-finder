@@ -47,6 +47,33 @@ function displayResults(coordinatesData) {
     let latitude = coordinatesData.results[0].geometry.location.lat;
     let longitude = coordinatesData.results[0].geometry.location.lng;
     getTrails(latitude, longitude);
+    getWeather(latitude, longitude);
+}
+
+function getWeather(latitude, longitude) {
+    let latStr = latitude.toFixed(3);
+    let lngStr = longitude.toFixed(3);
+    const APP_ID = '40d105dd';
+    const APP_KEY = 'f92b187fc4d8a926b68ac985a2dff76a';
+    let weatherURL = `http://api.weatherunlocked.com/api/current/${latStr},${lngStr}?app_id=${APP_ID}&app_key=${APP_KEY}`
+    
+    fetch(weatherURL)
+    .then(weatherData => {
+        if (weatherData.ok) {
+            return weatherData.json();
+        }
+        throw new Error(weatherData.statusText)
+    })
+    .then(weatherData => renderWeather(weatherData))
+    .catch(err => {
+        $('.js-weather-error-message').text(`error: ${err.message}`);
+    })
+}
+
+function renderWeather(weatherData) {
+    console.log(weatherData);
+    $('#weather-results').empty();
+    $('#weather-results').text(`The weather today will be ${weatherData.wx_desc}, with temperatures around ${weatherData.temp_f} (feels like: ${weatherData.feelslike_f})`);
 }
 
 function formatHikingQuery(trailParams) {
