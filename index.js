@@ -55,7 +55,7 @@ function getWeather(latitude, longitude) {
     let lngStr = longitude.toFixed(3);
     const APP_ID = '40d105dd';
     const APP_KEY = 'f92b187fc4d8a926b68ac985a2dff76a';
-    let weatherURL = `http://api.weatherunlocked.com/api/current/${latStr},${lngStr}?app_id=${APP_ID}&app_key=${APP_KEY}`
+    let weatherURL = `https://api.weatherunlocked.com/api/current/${latStr},${lngStr}?app_id=${APP_ID}&app_key=${APP_KEY}`
     
     fetch(weatherURL)
     .then(weatherData => {
