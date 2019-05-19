@@ -51,8 +51,7 @@ function displayResults(coordinatesData) {
 }
 
 function getWeather(latitude, longitude) {
-    let weatherURL = `https://api.darksky.net/forecast/9eca8b57ee48fbb7eb861b3bd743f3ce/${latitude},${longitude}`
-    
+    let weatherURL = `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=fcccba0a1f254fc3a7134d9275b27a32&units=I`
     fetch(weatherURL)
     .then(weatherData => {
         if (weatherData.ok) {
@@ -69,7 +68,8 @@ function getWeather(latitude, longitude) {
 function renderWeather(weatherData) {
     console.log(weatherData);
     $('#weather-results').empty();
-    $('#weather-results').text(`The weather today will be ${weatherData.wx_desc}, with temperatures around ${weatherData.temp_f} (feels like: ${weatherData.feelslike_f})`);
+    $('#weather-results').text(`Weather today in ${weatherData.data[0].city_name}: ${weatherData.data[0].weather.description}.
+    Current temperature: ${weatherData.data[0].temp} (feels like: ${weatherData.data[0].app_temp}).`);
 }
 
 function formatHikingQuery(trailParams) {
