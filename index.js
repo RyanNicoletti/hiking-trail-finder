@@ -51,11 +51,7 @@ function displayResults(coordinatesData) {
 }
 
 function getWeather(latitude, longitude) {
-    let latStr = latitude.toFixed(3);
-    let lngStr = longitude.toFixed(3);
-    const APP_ID = '40d105dd';
-    const APP_KEY = 'f92b187fc4d8a926b68ac985a2dff76a';
-    let weatherURL = `https://api.weatherunlocked.com/api/current/${latStr},${lngStr}?app_id=${APP_ID}&app_key=${APP_KEY}`
+    let weatherURL = `https://api.darksky.net/forecast/9eca8b57ee48fbb7eb861b3bd743f3ce/${latitude},${longitude}`
     
     fetch(weatherURL)
     .then(weatherData => {
