@@ -6,6 +6,11 @@
     /* border: solid red 1px; */
 }
 
+.input-label {
+    color: black;
+    font-weight: 300;
+}
+
 .main-page-header {
     width: 100vw;
     height: 100vh;
@@ -13,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("mika-luoma-1363279-unsplash.jpg");
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("mika-luoma-1363279-unsplash.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,11 +27,17 @@
 
 h1 {
     margin: 15px;
-    color: white;
+    color: black;
 }
 
 #weather-results {
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(0, 7, 1);
+    font-weight: 350;
+    font-size: 1.1em;
+    line-height: 1.5rem;
+    background-color: #B5625B;
 }
 
 #list-header {
@@ -43,15 +54,16 @@ ul {
 }
 
 li {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  width: 250px;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 20px;
-  padding: 15px;
+    background-color: rgb(132, 138, 133);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 250px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 15px;
 }
 
 li:hover {
@@ -64,11 +76,15 @@ li:hover {
 
 .card-summary {
     margin-bottom: 5px;
+    color: rgb(3, 85, 18);
+    line-height: 1.3rem;
 }
 
 .card-distance {
     margin-top: 5px;
     margin-bottom: 5px;
+    color: rgb(3, 85, 18);
+
 }
 
 li a {
@@ -77,6 +93,10 @@ li a {
 
 li a:active {
     color: black;
+}
+
+#results {
+    background-color: rgb(197, 194, 194);
 }
 
 .hidden, .hide-text {
