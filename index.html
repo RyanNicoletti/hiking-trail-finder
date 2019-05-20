@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hiking Guide</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <section>
+    <section class="main-page-header">
+        <div class="header-and-form">
         <h1>Find A Trail to Hike in Your Area</h1>
         <form id="js-form">
             <label for="search-text">Find Trails In: </label>
             <input type="text" name="search-state" id="js-search-state" placeholder="city, state" required>
-            <input type="submit" value="submit">
+            <input type="submit" value="submit" class="submit-button">
         </form>
+        </div>
     </section>
     <section class="js-error-message"></section>
     <section class="js-weather-error-message"></section>
     <section id="results" class="hidden">
         <div id="weather-results"></div>
-        <h2>Here Are Some Fun Trails To Hike!</h2>
+        <h2 class="hidden-h2" id="list-header"></h2>
         <ul id="results-list">
 
         </ul>

@@ -68,8 +68,9 @@ function getWeather(latitude, longitude) {
 function renderWeather(weatherData) {
     console.log(weatherData);
     $('#weather-results').empty();
-    $('#weather-results').text(`Weather today in ${weatherData.data[0].city_name}: ${weatherData.data[0].weather.description}.
+    $('#weather-results').append(`Weather today in ${weatherData.data[0].city_name}: ${weatherData.data[0].weather.description}.<br>
     Current temperature: ${weatherData.data[0].temp} (feels like: ${weatherData.data[0].app_temp}).`);
+    $('.hidden-h2').text('Here Are Some Fun Trails to Hike!');
 }
 
 function formatHikingQuery(trailParams) {
@@ -104,13 +105,20 @@ function renderHikingData(hikingData) {
     console.log(hikingData);
     $('#results-list').empty();
     for (let i = 0; i<hikingData.trails.length; i++) {
-        $('#results-list').append(`<li><h2><a href = "${hikingData.trails[i].url}">${hikingData.trails[i].name}</a></h2>
-        <p>${hikingData.trails[i].summary}</p>
-        <p>Distance: ${hikingData.trails[i].length}miles.</p>
+        $('#results-list').append(`<li><h2 class="card-header"><a href = "${hikingData.trails[i].url}">${hikingData.trails[i].name}</a></h2>
+        <p class="card-summary">${hikingData.trails[i].summary}</p>
         <p><img src="${hikingData.trails[i].imgSmallMed}" alt="picture of hiking trail"></p>
+        <p class="card-distance">Distance: ${hikingData.trails[i].length}miles.</p>
         </li>`)
     }
     $('#results').removeClass('hidden');
+    scrollToList();
 }
+
+function scrollToList() {
+        $('html, body').animate({
+            scrollTop: $('#weather-results').offset().top
+        }, 1500);
+    }
 
 $(watchForm);
