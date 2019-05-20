@@ -68,7 +68,7 @@ function getWeather(latitude, longitude) {
 function renderWeather(weatherData) {
     console.log(weatherData);
     $('#weather-results').empty();
-    $('#weather-results').append(`<img src="${weatherData.data[0].weather.icon}" alt="">Weather today in ${weatherData.data[0].city_name}: ${weatherData.data[0].weather.description}.<br>
+    $('#weather-results').append(`Weather today in ${weatherData.data[0].city_name}: ${weatherData.data[0].weather.description}.<br>
     Current temperature: ${weatherData.data[0].temp} (feels like: ${weatherData.data[0].app_temp}).`);
     $('.hidden-h2').text('Here Are Some Fun Trails to Hike!');
 }
