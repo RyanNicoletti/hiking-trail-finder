@@ -59,8 +59,8 @@ function displayResults(coordinatesData) {
 // Get request is made to Weather Bit API; data regarding weather forecast is returned
 
 function getWeather(latitude, longitude) {
-    let weatherURL = `https://cors-anywhere.herokuapp.com/https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=fcccba0a1f254fc3a7134d9275b27a32&units=I`
-    fetch(weatherURL)
+    let weatherURL = `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=fcccba0a1f254fc3a7134d9275b27a32&units=I`
+    fetchJsonp(weatherURL)
     .then(weatherData => {
         if (weatherData.ok) {
             return weatherData.json();
