@@ -2,7 +2,7 @@
 
 <a href="https://ryannicoletti.github.io/hiking-trail-finder/">Live App</a>
 
-<img src="hikingtrailfinder.png">
+<img src="hikingtrailfinder.jpg">
 
 <h2>Summary</h2>
 
