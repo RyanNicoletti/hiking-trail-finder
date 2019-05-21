@@ -8,6 +8,7 @@
 .input-label {
     color: rgb(3, 70, 3);
     font-weight: 300;
+    font-family: 'Gentium Basic', serif;
 }
 
 .main-page-header {
@@ -27,6 +28,7 @@
 h1 {
     margin: 15px;
     color: rgb(3, 70, 3);
+    font-family: 'Open Sans', sans-serif;
 }
 
 #weather-results {
@@ -37,10 +39,12 @@ h1 {
     font-size: 1.1em;
     line-height: 1.5rem;
     background-color: #2A7136;
+    font-family: 'Gentium Basic', serif;
 }
 
 h2 {
     color: rgb(3, 70, 3);
+    font-family: 'Open Sans', sans-serif;
 }
 
 #list-header {
@@ -79,18 +83,21 @@ li:hover {
     margin-bottom: 5px;
     font-size: 1.2rem;
     color: rgb(3, 70, 3);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .card-summary {
     margin-bottom: 5px;
     color: rgb(3, 85, 18);
     line-height: 1.3rem;
+    font-family: 'Gentium Basic', serif;
 }
 
 .card-distance {
     margin-top: 5px;
     margin-bottom: 5px;
     color: rgb(3, 85, 18);
+    font-family: 'Gentium Basic', serif;
 }
 
 .hike-info-btn {
