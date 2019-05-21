@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    /* border: solid red 1px; */
 }
 
 .input-label {
@@ -77,6 +76,7 @@ li:hover {
 .card-header {
     margin-bottom: 5px;
     font-size: 1.2rem;
+    color: rgb(3, 70, 3);
 }
 
 .card-summary {
@@ -89,7 +89,21 @@ li:hover {
     margin-top: 5px;
     margin-bottom: 5px;
     color: rgb(3, 85, 18);
+}
 
+.hike-info-btn {
+    height: 25px;
+    width: 100px;
+    color: black;
+    background-color: rgb(13, 128, 113);
+    font-size: .7em;
+    font-weight: 600;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.hike-info-btn:hover {
+    cursor: pointer;
 }
 
 li a {
@@ -106,4 +120,28 @@ li a:active {
 
 .hidden, .hide-text {
     display: none;
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    li {
+        flex-basis: 35%;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    li {
+        flex-basis: 21%;
+    }
 }

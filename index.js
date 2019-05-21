@@ -105,10 +105,11 @@ function renderHikingData(hikingData) {
     console.log(hikingData);
     $('#results-list').empty();
     for (let i = 0; i<hikingData.trails.length; i++) {
-        $('#results-list').append(`<li><h2 class="card-header"><a href = "${hikingData.trails[i].url}">${hikingData.trails[i].name}</a></h2>
+        $('#results-list').append(`<li><h2 class="card-header">${hikingData.trails[i].name}</h2>
         <p class="card-summary">${hikingData.trails[i].summary}</p>
         <p><img src="${hikingData.trails[i].imgSmallMed}" alt="picture of hiking trail"></p>
         <p class="card-distance">Distance: ${hikingData.trails[i].length}miles.</p>
+        <p><button class="hike-info-btn" onclick="window.location.href = '${hikingData.trails[i].url}';">More Info</button></p>
         </li>`)
     }
     $('#results').removeClass('hidden');
