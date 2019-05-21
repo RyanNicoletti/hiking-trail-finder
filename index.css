@@ -56,6 +56,8 @@ ul {
     list-style: none;
 }
 
+/* Syling for the hiking trail cards = li*/
+
 li {
     background-color: rgb(132, 138, 133);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -122,6 +124,8 @@ li a:active {
     display: none;
 }
 
+/* media query for tablets-2 cards displayed per row */
+
 @media only screen and (min-width: 750px) and (max-width: 1000px) {
     ul {
         display: flex;
@@ -133,6 +137,8 @@ li a:active {
         flex-basis: 35%;
     }
 }
+
+/* media query for laptops/desktops-4 cards displayed per row */
 
 @media only screen and (min-width: 1001px) {
     ul {

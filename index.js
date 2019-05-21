@@ -6,6 +6,8 @@ const googleMapsBaseURL = 'https://maps.googleapis.com/maps/api/geocode/json'
 const hikingKey = '200468808-f04c7a2d896d9c116b7c18e50f208a05'
 const hikingBaseURL = 'https://www.hikingproject.com/data/get-trails'
 
+// Call function getCoordinates upon submission of form
+
 function watchForm() {
     $('form').submit(e => {
         e.preventDefault();
@@ -13,6 +15,8 @@ function watchForm() {
         getCoordinates(searchTerm);
     })
 }
+
+// Get request to google maps API to get lat/lon coordinates returned
 
 function formatQueryString(params) {
     const queryItems = Object.keys(params)
@@ -42,6 +46,8 @@ function getCoordinates(query) {
     })
 }
 
+// // Defining variables lat/lon to be used to make get requests to hiking project API and weather API
+
 function displayResults(coordinatesData) {
     console.log(coordinatesData);
     let latitude = coordinatesData.results[0].geometry.location.lat;
@@ -49,6 +55,8 @@ function displayResults(coordinatesData) {
     getTrails(latitude, longitude);
     getWeather(latitude, longitude);
 }
+
+// Get request is made to Weather Bit API; data regarding weather forecast is returned
 
 function getWeather(latitude, longitude) {
     let weatherURL = `https://cors-anywhere.herokuapp.com/https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=fcccba0a1f254fc3a7134d9275b27a32&units=I`
@@ -65,6 +73,8 @@ function getWeather(latitude, longitude) {
     })
 }
 
+// Display weather forecast on the DOM
+
 function renderWeather(weatherData) {
     console.log(weatherData);
     $('#weather-results').empty();
@@ -72,6 +82,8 @@ function renderWeather(weatherData) {
     Current temperature: ${weatherData.data[0].temp} (feels like: ${weatherData.data[0].app_temp}).`);
     $('.hidden-h2').text('Here Are Some Fun Trails to Hike!');
 }
+
+// Get request to the Hiking Project API; returns data regarding hiking trails in the given location (from specified lat/lon coordinates).
 
 function formatHikingQuery(trailParams) {
     const hikingQueryItems = Object.keys(trailParams)
@@ -101,6 +113,8 @@ function getTrails(latitude, longitude) {
     })
 }
 
+// Information regarding hiking trails is displayed on the DOM
+
 function renderHikingData(hikingData) {
     console.log(hikingData);
     $('#results-list').empty();
@@ -115,6 +129,8 @@ function renderHikingData(hikingData) {
     $('#results').removeClass('hidden');
     scrollToList();
 }
+
+// Scrolls automatically to the weather and hiking trail information after user submission of form
 
 function scrollToList() {
         $('html, body').animate({
