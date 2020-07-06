@@ -1,4 +1,4 @@
-# Hiking Trail Finder
+# Hiking Trail Finder App
 
 <a href="https://ryannicoletti.github.io/hiking-trail-finder/">Live App</a>
 
